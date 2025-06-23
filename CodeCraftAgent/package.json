@@ -1,0 +1,48 @@
+{
+  "name": "codecraftagent",
+  "displayName": "CodeCraftAgent",
+  "description": "A VS Code extension to generate high-quality code for software agents using CodeCraftAgent API",
+  "version": "0.1.0",
+  "publisher": "CodeCraftTeam",  // برای انتشار واقعی، این را با نام ناشر خود جایگزین کنید
+  "icon": "resources/icon.svg",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:codecraftagent.generateCode"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codecraftagent.generateCode",
+        "title": "CodeCraftAgent: Generate Code"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "mocha -r ts-node/register src/test/*.test.ts",
+    "format": "prettier --write src/**/*.{ts,js}"
+  },
+  "dependencies": {
+    "axios": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/mocha": "^10.0.1",
+    "@types/sinon": "^10.0.13",
+    "@types/node": "^16.11.7",
+    "mocha": "^10.2.0",
+    "sinon": "^15.0.1",
+    "typescript": "^5.1.6",
+    "ts-node": "^10.9.1",
+    "prettier": "^3.0.0"
+  }
+}
